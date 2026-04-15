@@ -20,7 +20,8 @@ bool is_opening(char ch);
 bool matches(char open, char close);
 
 int main(void) {
-  char ch, open, close;
+  int ch;
+  char open, close;
 
   printf("Enter paranthesis and/or braces: ");
   while ((ch = getchar()) != EOF && ch != '\n') {

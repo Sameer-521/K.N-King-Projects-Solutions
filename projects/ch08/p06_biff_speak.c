@@ -3,8 +3,8 @@
 #define N 100
 
 int main(void) {
-  int i, length;
-  char msg[N], ch;
+  int i, length, ch;
+  char msg[N];
 
   printf("Enter message (max %d chars): ", N);
   i = 0;

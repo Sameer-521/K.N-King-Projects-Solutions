@@ -48,7 +48,7 @@ int translate(char ch) {
 }
 
 int main(void) {
-  char ch;
+  int ch;
   int numeric_val, i;
 
   i = 0;
@@ -64,4 +64,6 @@ int main(void) {
   }
 
   printf("\n");
+
+  return 0;
 }

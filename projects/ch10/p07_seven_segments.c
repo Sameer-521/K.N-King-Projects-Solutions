@@ -20,7 +20,7 @@ void print_digits_arr(void);
 bool is_vertical(int segment_index);
 
 int main(void) {
-  char ch;
+  int ch;
   int i = 0;
 
   clear_digits_arr();

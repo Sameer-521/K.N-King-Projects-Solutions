@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 int main(void) {
-  int i, start, end;
+  int i, ch, start, end;
   bool in_word = false;
-  char ch, terminating_char;
+  char terminating_char;
   char sentence[1024];
 
   printf("Enter a sentence (max 1024 chars): ");
