@@ -14,11 +14,16 @@ void display_map(char map[][N]) {
 }
 
 int main(void) {
-  int move, i, j, current_letter, test;
-  char map[10][10] = {[0 ... 9][0 ... 9] = '.'};
+  int move, i, j, current_letter;
+  char map[N][N];
   char letters[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
                     'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
                     'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+
+  // fill map
+  for (i = 0; i < N; i++)
+    for (j = 0; j < N; j++)
+      map[i][j] = '.';
 
   srand((unsigned)time(NULL));
 
