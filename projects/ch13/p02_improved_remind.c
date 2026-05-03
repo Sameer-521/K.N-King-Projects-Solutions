@@ -13,8 +13,6 @@ int main(void) {
   char date_str[6], time_str[10], buff[20], msg_str[MSG_LEN + 1];
   int month, day, hrs, mins, i, j, num_remind = 0;
 
-  buff[19] = '\0';
-
   printf("Date format: MM/dd --- Time format: 24h\n");
   for (;;) {
     if (num_remind == MAX_REMIND) {
@@ -96,7 +94,6 @@ int readline(char str[], int n) {
 
 void build_str(int n1, int n2, char *dest, const char *delimeter) {
   char buff[10];
-  buff[9] = '\0';
 
   sprintf(buff, "%02d", n1);
   strcpy(dest, buff);
