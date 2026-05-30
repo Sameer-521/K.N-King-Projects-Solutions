@@ -4,8 +4,10 @@
 # Do not ignore directories
 !*/
 
-# Do not ignore files ending in .c
+# Do not ignore
 !*.c
+!PROJECTS.md
+!README.md
 
 # Do not ignore the .gitignore file
 !.gitignore
