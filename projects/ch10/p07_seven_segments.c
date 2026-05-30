@@ -59,22 +59,31 @@ void print_digits_arr(void) {
 }
 
 void process_digit(int digit, int position) {
-  int col_base = WIDTH * position;
+  int col_base = WIDTH * position;  // starting column for this digit in the grid
   int row_base = 0, i;
   char display_ch;
 
+  // extra spacing after the 3rd digit onward for visual grouping
   if (position > 1)
     col_base++;
 
   for (i = 0; i < SEGMENT_MAX; i++) {
     if (segments[digit][i] == 1) {
+      // pick the character for this segment
       if (is_vertical(i))
         display_ch = '|';
-      else if (i == 3)
+      else if (i == 3)        // bottom bar (will be rendered as overline)
         display_ch = '-';
-      else
+      else                    // top or middle bar
         display_ch = '_';
 
+      // place the character at the correct grid coordinate
+      //   segment layout:       mapped to rows/cols:
+      //      0                      (0, col+1)
+      //    5   1               (1, col)   (1, col+2)
+      //      6                      (1, col+1)
+      //    4   2               (2, col)   (2, col+2)
+      //      3                      (3, col+1)
       switch (i) {
       case 0:
         digits[row_base][col_base + 1] = display_ch;
