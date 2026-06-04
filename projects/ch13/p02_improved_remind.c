@@ -2,7 +2,7 @@
 #include <string.h>
 
 #define MAX_REMIND 50
-#define MSG_LEN 60
+#define MSG_LEN 70
 
 int readline(char str[], int n);
 void build_str(int n1, int n2, char *dest, const char *delimeter);
@@ -10,7 +10,7 @@ void clear_input_buffer(void);
 
 int main(void) {
   char reminders[MAX_REMIND][MSG_LEN + 3];
-  char date_str[6], time_str[10], buff[20], msg_str[MSG_LEN + 1];
+  char date_str[10], time_str[10], buff[20], msg_str[MSG_LEN + 1];
   int month, day, hrs, mins, i, j, num_remind = 0;
 
   printf("Date format: MM/dd --- Time format: 24h\n");
@@ -55,7 +55,7 @@ int main(void) {
 
     // compare by date and time
     strncpy(buff, date_str, sizeof(buff));
-    strncat(buff, time_str, sizeof(buff) - strlen(date_str));
+    strncat(buff, time_str, sizeof(buff) - strlen(buff));
     for (i = 0; i < num_remind; i++)
       if (strcmp(buff, reminders[i]) < 0)
         break;
